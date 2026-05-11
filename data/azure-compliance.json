@@ -1,8 +1,8 @@
 {
   "schemaVersion": "2.0",
-  "generatedAt": "2026-04-13",
-  "lastCheck": "2026-04-13T04:44:18Z",
-  "lastSync": "2026-04-13T04:44:18Z",
+  "generatedAt": "2026-05-11",
+  "lastCheck": "2026-05-11T00:19:39Z",
+  "lastSync": "2026-05-11T00:19:39Z",
   "sourceDescription": "Microsoft Azure Compliance Offerings",
   "frameworks": [
     "CSA STAR Certification",
@@ -47,8 +47,8 @@
         "pciDss": true,
         "australiaIrap": true,
         "germanyC5": true,
-        "singaporeMtcsLevel3": false,
-        "spainEnsHigh": true
+        "singaporeMtcsLevel3": true,
+        "spainEnsHigh": false
       },
       "azureGovernment": {
         "csaStarCertification": true,
@@ -88,8 +88,8 @@
         "pciDss": true,
         "australiaIrap": true,
         "germanyC5": true,
-        "singaporeMtcsLevel3": false,
-        "spainEnsHigh": true
+        "singaporeMtcsLevel3": true,
+        "spainEnsHigh": false
       },
       "azureGovernment": {
         "csaStarCertification": true,
@@ -660,7 +660,7 @@
         "kIsms": false,
         "pci3ds": true,
         "pciDss": true,
-        "australiaIrap": false,
+        "australiaIrap": true,
         "germanyC5": true,
         "singaporeMtcsLevel3": false,
         "spainEnsHigh": true
@@ -701,7 +701,7 @@
         "kIsms": false,
         "pci3ds": true,
         "pciDss": true,
-        "australiaIrap": false,
+        "australiaIrap": true,
         "germanyC5": true,
         "singaporeMtcsLevel3": false,
         "spainEnsHigh": true
@@ -731,20 +731,20 @@
       "azure": {
         "csaStarCertification": true,
         "csaStarAttestation": false,
-        "iso27001_27018": false,
-        "iso27017": true,
-        "iso27701": false,
-        "iso9001_22301_20000": true,
-        "soc1_2_3": false,
-        "gsmaSasSm": true,
-        "hipaaBaa": false,
-        "hitrust": true,
+        "iso27001_27018": true,
+        "iso27017": false,
+        "iso27701": true,
+        "iso9001_22301_20000": false,
+        "soc1_2_3": true,
+        "gsmaSasSm": false,
+        "hipaaBaa": true,
+        "hitrust": false,
         "kIsms": false,
         "pci3ds": false,
         "pciDss": false,
         "australiaIrap": false,
         "germanyC5": false,
-        "singaporeMtcsLevel3": false,
+        "singaporeMtcsLevel3": true,
         "spainEnsHigh": false
       },
       "azureGovernment": {
@@ -779,14 +779,14 @@
         "soc1_2_3": true,
         "gsmaSasSm": true,
         "hipaaBaa": true,
-        "hitrust": false,
-        "kIsms": true,
+        "hitrust": true,
+        "kIsms": false,
         "pci3ds": true,
-        "pciDss": false,
-        "australiaIrap": false,
-        "germanyC5": true,
-        "singaporeMtcsLevel3": false,
-        "spainEnsHigh": true
+        "pciDss": true,
+        "australiaIrap": true,
+        "germanyC5": false,
+        "singaporeMtcsLevel3": true,
+        "spainEnsHigh": false
       },
       "azureGovernment": {
         "csaStarCertification": true,
@@ -990,8 +990,8 @@
         "pciDss": true,
         "australiaIrap": true,
         "germanyC5": true,
-        "singaporeMtcsLevel3": false,
-        "spainEnsHigh": true
+        "singaporeMtcsLevel3": true,
+        "spainEnsHigh": false
       },
       "azureGovernment": {
         "csaStarCertification": true,
@@ -1070,7 +1070,7 @@
         "kIsms": false,
         "pci3ds": true,
         "pciDss": true,
-        "australiaIrap": false,
+        "australiaIrap": true,
         "germanyC5": true,
         "singaporeMtcsLevel3": false,
         "spainEnsHigh": true
@@ -1275,7 +1275,7 @@
         "kIsms": false,
         "pci3ds": false,
         "pciDss": true,
-        "australiaIrap": false,
+        "australiaIrap": true,
         "germanyC5": true,
         "singaporeMtcsLevel3": false,
         "spainEnsHigh": false
@@ -1316,9 +1316,9 @@
         "kIsms": false,
         "pci3ds": true,
         "pciDss": true,
-        "australiaIrap": false,
+        "australiaIrap": true,
         "germanyC5": true,
-        "singaporeMtcsLevel3": true,
+        "singaporeMtcsLevel3": false,
         "spainEnsHigh": false
       },
       "azureGovernment": {
@@ -1356,7 +1356,7 @@
         "hitrust": false,
         "kIsms": true,
         "pci3ds": true,
-        "pciDss": false,
+        "pciDss": true,
         "australiaIrap": false,
         "germanyC5": false,
         "singaporeMtcsLevel3": false,
@@ -1398,10 +1398,10 @@
         "kIsms": false,
         "pci3ds": true,
         "pciDss": true,
-        "australiaIrap": false,
+        "australiaIrap": true,
         "germanyC5": true,
-        "singaporeMtcsLevel3": true,
-        "spainEnsHigh": false
+        "singaporeMtcsLevel3": false,
+        "spainEnsHigh": true
       },
       "azureGovernment": {
         "csaStarCertification": false,
@@ -1459,7 +1459,7 @@
         "pci3ds": false,
         "pciDss": true,
         "australiaIrap": false,
-        "germanyC5": false,
+        "germanyC5": true,
         "singaporeMtcsLevel3": false,
         "spainEnsHigh": false
       }
@@ -1603,7 +1603,7 @@
         "kIsms": false,
         "pci3ds": true,
         "pciDss": true,
-        "australiaIrap": false,
+        "australiaIrap": true,
         "germanyC5": false,
         "singaporeMtcsLevel3": false,
         "spainEnsHigh": false
@@ -1618,7 +1618,7 @@
         "soc1_2_3": false,
         "gsmaSasSm": false,
         "hipaaBaa": false,
-        "hitrust": true,
+        "hitrust": false,
         "kIsms": false,
         "pci3ds": false,
         "pciDss": false,
@@ -1685,7 +1685,7 @@
         "kIsms": false,
         "pci3ds": false,
         "pciDss": false,
-        "australiaIrap": false,
+        "australiaIrap": true,
         "germanyC5": true,
         "singaporeMtcsLevel3": false,
         "spainEnsHigh": false
@@ -1769,8 +1769,8 @@
         "pciDss": true,
         "australiaIrap": true,
         "germanyC5": true,
-        "singaporeMtcsLevel3": false,
-        "spainEnsHigh": true
+        "singaporeMtcsLevel3": true,
+        "spainEnsHigh": false
       },
       "azureGovernment": {
         "csaStarCertification": true,
@@ -1851,8 +1851,8 @@
         "pciDss": true,
         "australiaIrap": true,
         "germanyC5": true,
-        "singaporeMtcsLevel3": false,
-        "spainEnsHigh": true
+        "singaporeMtcsLevel3": true,
+        "spainEnsHigh": false
       },
       "azureGovernment": {
         "csaStarCertification": true,
@@ -1934,7 +1934,7 @@
         "australiaIrap": true,
         "germanyC5": true,
         "singaporeMtcsLevel3": true,
-        "spainEnsHigh": true
+        "spainEnsHigh": false
       },
       "azureGovernment": {
         "csaStarCertification": false,
@@ -1972,7 +1972,7 @@
         "kIsms": false,
         "pci3ds": false,
         "pciDss": false,
-        "australiaIrap": false,
+        "australiaIrap": true,
         "germanyC5": true,
         "singaporeMtcsLevel3": true,
         "spainEnsHigh": false
@@ -2215,13 +2215,13 @@
         "gsmaSasSm": false,
         "hipaaBaa": true,
         "hitrust": true,
-        "kIsms": true,
-        "pci3ds": false,
+        "kIsms": false,
+        "pci3ds": true,
         "pciDss": true,
-        "australiaIrap": true,
+        "australiaIrap": false,
         "germanyC5": false,
-        "singaporeMtcsLevel3": false,
-        "spainEnsHigh": true
+        "singaporeMtcsLevel3": true,
+        "spainEnsHigh": false
       },
       "azureGovernment": {
         "csaStarCertification": false,
@@ -2341,7 +2341,7 @@
         "kIsms": false,
         "pci3ds": true,
         "pciDss": true,
-        "australiaIrap": false,
+        "australiaIrap": true,
         "germanyC5": false,
         "singaporeMtcsLevel3": false,
         "spainEnsHigh": false
@@ -2382,9 +2382,9 @@
         "kIsms": false,
         "pci3ds": true,
         "pciDss": true,
-        "australiaIrap": false,
+        "australiaIrap": true,
         "germanyC5": true,
-        "singaporeMtcsLevel3": true,
+        "singaporeMtcsLevel3": false,
         "spainEnsHigh": false
       },
       "azureGovernment": {
@@ -2415,14 +2415,14 @@
         "iso27001_27018": true,
         "iso27017": true,
         "iso27701": true,
-        "iso9001_22301_20000": true,
+        "iso9001_22301_20000": false,
         "soc1_2_3": false,
         "gsmaSasSm": false,
         "hipaaBaa": false,
         "hitrust": false,
-        "kIsms": false,
+        "kIsms": true,
         "pci3ds": true,
-        "pciDss": true,
+        "pciDss": false,
         "australiaIrap": false,
         "germanyC5": false,
         "singaporeMtcsLevel3": false,
@@ -2464,7 +2464,7 @@
         "kIsms": false,
         "pci3ds": true,
         "pciDss": true,
-        "australiaIrap": false,
+        "australiaIrap": true,
         "germanyC5": true,
         "singaporeMtcsLevel3": false,
         "spainEnsHigh": true
@@ -2665,11 +2665,11 @@
         "soc1_2_3": false,
         "gsmaSasSm": false,
         "hipaaBaa": true,
-        "hitrust": false,
-        "kIsms": true,
-        "pci3ds": false,
-        "pciDss": false,
-        "australiaIrap": false,
+        "hitrust": true,
+        "kIsms": false,
+        "pci3ds": true,
+        "pciDss": true,
+        "australiaIrap": true,
         "germanyC5": false,
         "singaporeMtcsLevel3": false,
         "spainEnsHigh": false
@@ -2833,10 +2833,10 @@
         "kIsms": false,
         "pci3ds": true,
         "pciDss": true,
-        "australiaIrap": false,
+        "australiaIrap": true,
         "germanyC5": true,
-        "singaporeMtcsLevel3": true,
-        "spainEnsHigh": false
+        "singaporeMtcsLevel3": false,
+        "spainEnsHigh": true
       },
       "azureGovernment": {
         "csaStarCertification": false,
@@ -2935,7 +2935,7 @@
         "pci3ds": false,
         "pciDss": true,
         "australiaIrap": false,
-        "germanyC5": false,
+        "germanyC5": true,
         "singaporeMtcsLevel3": false,
         "spainEnsHigh": false
       }
@@ -3040,8 +3040,8 @@
         "pciDss": true,
         "australiaIrap": true,
         "germanyC5": true,
-        "singaporeMtcsLevel3": false,
-        "spainEnsHigh": true
+        "singaporeMtcsLevel3": true,
+        "spainEnsHigh": false
       },
       "azureGovernment": {
         "csaStarCertification": true,
@@ -3105,47 +3105,6 @@
       }
     },
     {
-      "serviceName": "Azure Government Service",
-      "azure": {
-        "csaStarCertification": false,
-        "csaStarAttestation": false,
-        "iso27001_27018": false,
-        "iso27017": false,
-        "iso27701": false,
-        "iso9001_22301_20000": false,
-        "soc1_2_3": false,
-        "gsmaSasSm": false,
-        "hipaaBaa": false,
-        "hitrust": false,
-        "kIsms": false,
-        "pci3ds": false,
-        "pciDss": false,
-        "australiaIrap": false,
-        "germanyC5": false,
-        "singaporeMtcsLevel3": false,
-        "spainEnsHigh": false
-      },
-      "azureGovernment": {
-        "csaStarCertification": false,
-        "csaStarAttestation": false,
-        "iso27001_27018": false,
-        "iso27017": false,
-        "iso27701": false,
-        "iso9001_22301_20000": false,
-        "soc1_2_3": false,
-        "gsmaSasSm": false,
-        "hipaaBaa": false,
-        "hitrust": false,
-        "kIsms": false,
-        "pci3ds": false,
-        "pciDss": false,
-        "australiaIrap": false,
-        "germanyC5": false,
-        "singaporeMtcsLevel3": false,
-        "spainEnsHigh": false
-      }
-    },
-    {
       "serviceName": "Azure HDInsight",
       "azure": {
         "csaStarCertification": true,
@@ -3164,7 +3123,7 @@
         "australiaIrap": true,
         "germanyC5": true,
         "singaporeMtcsLevel3": true,
-        "spainEnsHigh": true
+        "spainEnsHigh": false
       },
       "azureGovernment": {
         "csaStarCertification": true,
@@ -3204,8 +3163,8 @@
         "pciDss": true,
         "australiaIrap": true,
         "germanyC5": true,
-        "singaporeMtcsLevel3": false,
-        "spainEnsHigh": true
+        "singaporeMtcsLevel3": true,
+        "spainEnsHigh": false
       },
       "azureGovernment": {
         "csaStarCertification": false,
@@ -3527,7 +3486,7 @@
         "gsmaSasSm": false,
         "hipaaBaa": false,
         "hitrust": false,
-        "kIsms": false,
+        "kIsms": true,
         "pci3ds": true,
         "pciDss": true,
         "australiaIrap": false,
@@ -3571,7 +3530,7 @@
         "kIsms": false,
         "pci3ds": true,
         "pciDss": true,
-        "australiaIrap": false,
+        "australiaIrap": true,
         "germanyC5": true,
         "singaporeMtcsLevel3": false,
         "spainEnsHigh": true
@@ -3778,7 +3737,7 @@
         "pciDss": false,
         "australiaIrap": false,
         "germanyC5": true,
-        "singaporeMtcsLevel3": false,
+        "singaporeMtcsLevel3": true,
         "spainEnsHigh": false
       },
       "azureGovernment": {
@@ -4022,7 +3981,7 @@
         "kIsms": false,
         "pci3ds": true,
         "pciDss": true,
-        "australiaIrap": false,
+        "australiaIrap": true,
         "germanyC5": false,
         "singaporeMtcsLevel3": false,
         "spainEnsHigh": false
@@ -4104,9 +4063,9 @@
         "kIsms": true,
         "pci3ds": true,
         "pciDss": true,
-        "australiaIrap": false,
+        "australiaIrap": true,
         "germanyC5": true,
-        "singaporeMtcsLevel3": true,
+        "singaporeMtcsLevel3": false,
         "spainEnsHigh": false
       },
       "azureGovernment": {
@@ -4145,7 +4104,7 @@
         "kIsms": false,
         "pci3ds": true,
         "pciDss": true,
-        "australiaIrap": false,
+        "australiaIrap": true,
         "germanyC5": false,
         "singaporeMtcsLevel3": false,
         "spainEnsHigh": false
@@ -4227,7 +4186,7 @@
         "kIsms": false,
         "pci3ds": true,
         "pciDss": true,
-        "australiaIrap": false,
+        "australiaIrap": true,
         "germanyC5": true,
         "singaporeMtcsLevel3": false,
         "spainEnsHigh": true
@@ -4309,7 +4268,7 @@
         "kIsms": false,
         "pci3ds": true,
         "pciDss": true,
-        "australiaIrap": false,
+        "australiaIrap": true,
         "germanyC5": true,
         "singaporeMtcsLevel3": false,
         "spainEnsHigh": true
@@ -4473,10 +4432,10 @@
         "kIsms": false,
         "pci3ds": true,
         "pciDss": true,
-        "australiaIrap": false,
+        "australiaIrap": true,
         "germanyC5": true,
-        "singaporeMtcsLevel3": true,
-        "spainEnsHigh": false
+        "singaporeMtcsLevel3": false,
+        "spainEnsHigh": true
       },
       "azureGovernment": {
         "csaStarCertification": false,
@@ -4842,7 +4801,7 @@
         "kIsms": false,
         "pci3ds": true,
         "pciDss": true,
-        "australiaIrap": false,
+        "australiaIrap": true,
         "germanyC5": true,
         "singaporeMtcsLevel3": true,
         "spainEnsHigh": false
@@ -4883,10 +4842,10 @@
         "kIsms": false,
         "pci3ds": true,
         "pciDss": true,
-        "australiaIrap": false,
+        "australiaIrap": true,
         "germanyC5": true,
-        "singaporeMtcsLevel3": true,
-        "spainEnsHigh": false
+        "singaporeMtcsLevel3": false,
+        "spainEnsHigh": true
       },
       "azureGovernment": {
         "csaStarCertification": false,
@@ -4965,10 +4924,10 @@
         "kIsms": false,
         "pci3ds": true,
         "pciDss": true,
-        "australiaIrap": false,
+        "australiaIrap": true,
         "germanyC5": true,
-        "singaporeMtcsLevel3": true,
-        "spainEnsHigh": false
+        "singaporeMtcsLevel3": false,
+        "spainEnsHigh": true
       },
       "azureGovernment": {
         "csaStarCertification": false,
@@ -5087,7 +5046,7 @@
         "hitrust": false,
         "kIsms": false,
         "pci3ds": false,
-        "pciDss": false,
+        "pciDss": true,
         "australiaIrap": false,
         "germanyC5": false,
         "singaporeMtcsLevel3": false,
@@ -5252,7 +5211,7 @@
         "kIsms": false,
         "pci3ds": false,
         "pciDss": false,
-        "australiaIrap": false,
+        "australiaIrap": true,
         "germanyC5": true,
         "singaporeMtcsLevel3": false,
         "spainEnsHigh": false
@@ -5330,11 +5289,11 @@
         "soc1_2_3": false,
         "gsmaSasSm": true,
         "hipaaBaa": false,
-        "hitrust": false,
-        "kIsms": true,
-        "pci3ds": false,
+        "hitrust": true,
+        "kIsms": false,
+        "pci3ds": true,
         "pciDss": true,
-        "australiaIrap": true,
+        "australiaIrap": false,
         "germanyC5": false,
         "singaporeMtcsLevel3": false,
         "spainEnsHigh": false
@@ -5539,7 +5498,7 @@
         "kIsms": false,
         "pci3ds": false,
         "pciDss": true,
-        "australiaIrap": false,
+        "australiaIrap": true,
         "germanyC5": true,
         "singaporeMtcsLevel3": true,
         "spainEnsHigh": false
@@ -5823,10 +5782,10 @@
         "gsmaSasSm": false,
         "hipaaBaa": false,
         "hitrust": false,
-        "kIsms": false,
-        "pci3ds": true,
+        "kIsms": true,
+        "pci3ds": false,
         "pciDss": false,
-        "australiaIrap": false,
+        "australiaIrap": true,
         "germanyC5": false,
         "singaporeMtcsLevel3": true,
         "spainEnsHigh": false
@@ -6074,8 +6033,8 @@
         "pciDss": true,
         "australiaIrap": true,
         "germanyC5": true,
-        "singaporeMtcsLevel3": true,
-        "spainEnsHigh": false
+        "singaporeMtcsLevel3": false,
+        "spainEnsHigh": true
       },
       "azureGovernment": {
         "csaStarCertification": false,
@@ -6192,10 +6151,10 @@
         "gsmaSasSm": true,
         "hipaaBaa": true,
         "hitrust": true,
-        "kIsms": false,
-        "pci3ds": true,
+        "kIsms": true,
+        "pci3ds": false,
         "pciDss": true,
-        "australiaIrap": false,
+        "australiaIrap": true,
         "germanyC5": true,
         "singaporeMtcsLevel3": true,
         "spainEnsHigh": true
@@ -6235,8 +6194,8 @@
         "hitrust": true,
         "kIsms": false,
         "pci3ds": false,
-        "pciDss": false,
-        "australiaIrap": false,
+        "pciDss": true,
+        "australiaIrap": true,
         "germanyC5": true,
         "singaporeMtcsLevel3": true,
         "spainEnsHigh": false
@@ -6441,10 +6400,10 @@
         "kIsms": false,
         "pci3ds": true,
         "pciDss": true,
-        "australiaIrap": false,
-        "germanyC5": true,
+        "australiaIrap": true,
+        "germanyC5": false,
         "singaporeMtcsLevel3": false,
-        "spainEnsHigh": false
+        "spainEnsHigh": true
       },
       "azureGovernment": {
         "csaStarCertification": false,
@@ -6705,7 +6664,7 @@
         "hitrust": true,
         "kIsms": false,
         "pci3ds": false,
-        "pciDss": true,
+        "pciDss": false,
         "australiaIrap": false,
         "germanyC5": true,
         "singaporeMtcsLevel3": false,
@@ -6810,8 +6769,8 @@
         "kIsms": false,
         "pci3ds": true,
         "pciDss": true,
-        "australiaIrap": false,
-        "germanyC5": true,
+        "australiaIrap": true,
+        "germanyC5": false,
         "singaporeMtcsLevel3": false,
         "spainEnsHigh": false
       },
@@ -6892,7 +6851,7 @@
         "kIsms": false,
         "pci3ds": true,
         "pciDss": true,
-        "australiaIrap": false,
+        "australiaIrap": true,
         "germanyC5": true,
         "singaporeMtcsLevel3": false,
         "spainEnsHigh": true
@@ -6909,10 +6868,10 @@
         "hipaaBaa": true,
         "hitrust": false,
         "kIsms": false,
-        "pci3ds": true,
+        "pci3ds": false,
         "pciDss": true,
         "australiaIrap": false,
-        "germanyC5": false,
+        "germanyC5": true,
         "singaporeMtcsLevel3": false,
         "spainEnsHigh": false
       }
@@ -7112,12 +7071,12 @@
         "soc1_2_3": false,
         "gsmaSasSm": false,
         "hipaaBaa": false,
-        "hitrust": true,
+        "hitrust": false,
         "kIsms": false,
         "pci3ds": false,
-        "pciDss": false,
+        "pciDss": true,
         "australiaIrap": false,
-        "germanyC5": true,
+        "germanyC5": false,
         "singaporeMtcsLevel3": false,
         "spainEnsHigh": false
       }
@@ -7466,7 +7425,7 @@
         "kIsms": false,
         "pci3ds": true,
         "pciDss": true,
-        "australiaIrap": false,
+        "australiaIrap": true,
         "germanyC5": true,
         "singaporeMtcsLevel3": false,
         "spainEnsHigh": true
@@ -7589,7 +7548,7 @@
         "kIsms": false,
         "pci3ds": true,
         "pciDss": true,
-        "australiaIrap": false,
+        "australiaIrap": true,
         "germanyC5": true,
         "singaporeMtcsLevel3": false,
         "spainEnsHigh": true
@@ -7855,7 +7814,7 @@
         "pci3ds": false,
         "pciDss": true,
         "australiaIrap": false,
-        "germanyC5": true,
+        "germanyC5": false,
         "singaporeMtcsLevel3": false,
         "spainEnsHigh": false
       }
@@ -7937,7 +7896,7 @@
         "pci3ds": false,
         "pciDss": true,
         "australiaIrap": false,
-        "germanyC5": true,
+        "germanyC5": false,
         "singaporeMtcsLevel3": false,
         "spainEnsHigh": false
       }
@@ -8019,7 +7978,7 @@
         "pci3ds": false,
         "pciDss": true,
         "australiaIrap": false,
-        "germanyC5": true,
+        "germanyC5": false,
         "singaporeMtcsLevel3": false,
         "spainEnsHigh": false
       }
@@ -8042,7 +8001,7 @@
         "pciDss": true,
         "australiaIrap": true,
         "germanyC5": true,
-        "singaporeMtcsLevel3": true,
+        "singaporeMtcsLevel3": false,
         "spainEnsHigh": false
       },
       "azureGovernment": {
@@ -8060,7 +8019,7 @@
         "pci3ds": false,
         "pciDss": true,
         "australiaIrap": false,
-        "germanyC5": true,
+        "germanyC5": false,
         "singaporeMtcsLevel3": false,
         "spainEnsHigh": false
       }
@@ -8101,7 +8060,7 @@
         "pci3ds": false,
         "pciDss": true,
         "australiaIrap": false,
-        "germanyC5": true,
+        "germanyC5": false,
         "singaporeMtcsLevel3": false,
         "spainEnsHigh": false
       }
@@ -8142,7 +8101,7 @@
         "pci3ds": false,
         "pciDss": true,
         "australiaIrap": false,
-        "germanyC5": true,
+        "germanyC5": false,
         "singaporeMtcsLevel3": false,
         "spainEnsHigh": false
       }
@@ -8183,7 +8142,7 @@
         "pci3ds": false,
         "pciDss": true,
         "australiaIrap": false,
-        "germanyC5": true,
+        "germanyC5": false,
         "singaporeMtcsLevel3": false,
         "spainEnsHigh": false
       }
@@ -8204,7 +8163,7 @@
         "kIsms": true,
         "pci3ds": true,
         "pciDss": true,
-        "australiaIrap": false,
+        "australiaIrap": true,
         "germanyC5": true,
         "singaporeMtcsLevel3": true,
         "spainEnsHigh": true
@@ -8224,7 +8183,7 @@
         "pci3ds": false,
         "pciDss": true,
         "australiaIrap": false,
-        "germanyC5": true,
+        "germanyC5": false,
         "singaporeMtcsLevel3": false,
         "spainEnsHigh": false
       }
@@ -8265,7 +8224,7 @@
         "pci3ds": false,
         "pciDss": true,
         "australiaIrap": false,
-        "germanyC5": true,
+        "germanyC5": false,
         "singaporeMtcsLevel3": false,
         "spainEnsHigh": false
       }
@@ -8306,7 +8265,7 @@
         "pci3ds": false,
         "pciDss": true,
         "australiaIrap": false,
-        "germanyC5": true,
+        "germanyC5": false,
         "singaporeMtcsLevel3": false,
         "spainEnsHigh": false
       }
@@ -8347,7 +8306,7 @@
         "pci3ds": false,
         "pciDss": true,
         "australiaIrap": false,
-        "germanyC5": true,
+        "germanyC5": false,
         "singaporeMtcsLevel3": false,
         "spainEnsHigh": false
       }
@@ -8388,7 +8347,7 @@
         "pci3ds": false,
         "pciDss": true,
         "australiaIrap": false,
-        "germanyC5": true,
+        "germanyC5": false,
         "singaporeMtcsLevel3": false,
         "spainEnsHigh": false
       }
@@ -8429,7 +8388,7 @@
         "pci3ds": false,
         "pciDss": true,
         "australiaIrap": false,
-        "germanyC5": true,
+        "germanyC5": false,
         "singaporeMtcsLevel3": false,
         "spainEnsHigh": false
       }
@@ -8489,8 +8448,8 @@
         "hipaaBaa": true,
         "hitrust": true,
         "kIsms": false,
-        "pci3ds": false,
-        "pciDss": false,
+        "pci3ds": true,
+        "pciDss": true,
         "australiaIrap": false,
         "germanyC5": false,
         "singaporeMtcsLevel3": false,
@@ -8593,7 +8552,7 @@
         "pci3ds": false,
         "pciDss": true,
         "australiaIrap": false,
-        "germanyC5": true,
+        "germanyC5": false,
         "singaporeMtcsLevel3": false,
         "spainEnsHigh": false
       }
@@ -8608,7 +8567,7 @@
         "iso27701": true,
         "iso9001_22301_20000": false,
         "soc1_2_3": true,
-        "gsmaSasSm": true,
+        "gsmaSasSm": false,
         "hipaaBaa": true,
         "hitrust": true,
         "kIsms": true,
