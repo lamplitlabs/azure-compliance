@@ -1,0 +1,42 @@
+{
+  "serverCardSchema": "https://static.modelcontextprotocol.io/schemas/v1/server-card.schema.json",
+  "serverName": "com.bitesinbyte/azure-compliance",
+  "serverTitle": "Azure Compliance",
+  "serverDescription": "Query Azure service compliance across 17 frameworks and Azure Government.",
+  "serverVersion": "1.0.0",
+  "siteUrl": "https://azure-compliance.bitesinbyte.com",
+  "repository": {
+    "source": "github",
+    "url": "https://github.com/bitesinbyte/azure-compliance",
+    "subfolder": "mcp-server"
+  },
+  "icon": {
+    "src": "https://azure-compliance.bitesinbyte.com/icon.svg",
+    "mimeType": "image/svg+xml",
+    "sizes": [
+      "any"
+    ]
+  },
+  "remote": {
+    "type": "streamable-http",
+    "url": "https://azure-compliance-mcp.purplefield-872ca910.germanywestcentral.azurecontainerapps.io/mcp"
+  },
+  "protocolVersions": {
+    "primary": {
+      "version": "2026-07-28",
+      "displayLabel": "MCP 2026-07-28 RC",
+      "status": "release candidate"
+    },
+    "compatibility": {
+      "version": "2025-11-25",
+      "displayLabel": "MCP 2025-11-25",
+      "status": "compatibility"
+    }
+  },
+  "serverCardUrl": "https://azure-compliance-mcp.purplefield-872ca910.germanywestcentral.azurecontainerapps.io/mcp/server-card",
+  "compatibilityServerCardUrl": "https://azure-compliance.bitesinbyte.com/.well-known/mcp.json",
+  "catalogUrl": "https://azure-compliance.bitesinbyte.com/.well-known/mcp/catalog.json",
+  "catalogSpecVersion": "draft",
+  "catalogIdentifier": "urn:air:bitesinbyte.com:azure-compliance",
+  "serverCardMediaType": "application/mcp-server-card+json"
+}

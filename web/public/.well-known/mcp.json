@@ -1,19 +1,32 @@
 {
-  "schema_version": "1.0",
-  "name": "Azure Compliance Matrix",
-  "description": "Query Azure services compliance data across 17 frameworks for Azure and Azure Government clouds. Data is auto-synced from Microsoft's Service Trust Portal.",
-  "url": "https://azure-compliance.bitesinbyte.com",
-  "provider": {
-    "name": "Bites In Byte",
-    "url": "https://www.bitesinbyte.com"
+  "$schema": "https://static.modelcontextprotocol.io/schemas/v1/server-card.schema.json",
+  "name": "com.bitesinbyte/azure-compliance",
+  "title": "Azure Compliance",
+  "description": "Query Azure service compliance across 17 frameworks and Azure Government.",
+  "version": "1.0.0",
+  "websiteUrl": "https://azure-compliance.bitesinbyte.com",
+  "repository": {
+    "source": "github",
+    "url": "https://github.com/bitesinbyte/azure-compliance",
+    "subfolder": "mcp-server"
   },
-  "resources": [
+  "icons": [
     {
-      "uri": "https://azure-compliance.bitesinbyte.com/data/azure-compliance.json",
-      "name": "Azure Compliance Data",
-      "description": "Complete compliance matrix JSON containing 210+ Azure services with boolean compliance status across 17 frameworks (CSA STAR, ISO 27001, SOC, HIPAA, PCI DSS, HITRUST, Germany C5, etc.) for both Azure and Azure Government clouds.",
-      "mimeType": "application/json"
+      "src": "https://azure-compliance.bitesinbyte.com/icon.svg",
+      "mimeType": "image/svg+xml",
+      "sizes": [
+        "any"
+      ]
     }
   ],
-  "instructions": "This MCP server provides Azure compliance data. The data is a JSON file with schema version 2.0 containing: 'services' array where each service has 'serviceName', 'azure' object, and 'azureGovernment' object. Each cloud object has boolean fields for 17 compliance frameworks: csaStarCertification, csaStarAttestation, iso27001_27018, iso27017, iso27701, iso9001_22301_20000, soc1_2_3, gsmaSasSm, hipaaBaa, hitrust, kIsms, pci3ds, pciDss, australiaIrap, germanyC5, singaporeMtcsLevel3, spainEnsHigh. Use this to answer questions about which Azure services are compliant with specific frameworks."
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://azure-compliance-mcp.purplefield-872ca910.germanywestcentral.azurecontainerapps.io/mcp",
+      "supportedProtocolVersions": [
+        "2026-07-28",
+        "2025-11-25"
+      ]
+    }
+  ]
 }

@@ -33,6 +33,12 @@ import {
   FRAMEWORK_KEYS,
   FRAMEWORK_LABELS,
   FRAMEWORK_FULL_NAMES,
+  MCP_CATALOG_URL,
+  MCP_CLIENT_CONFIG_EXAMPLE,
+  MCP_COMPATIBILITY_PROTOCOL,
+  MCP_ENDPOINT_URL,
+  MCP_PRIMARY_PROTOCOL,
+  MCP_SERVER_CARD_URL,
 } from "@/lib/constants";
 
 function formatDateTime(dateStr: string | undefined): string {
@@ -488,31 +494,44 @@ export function ComplianceMatrix() {
             <div className="min-w-0 flex-1">
               <h3 className="text-sm font-semibold">MCP Integration</h3>
               <p className="mt-0.5 text-xs leading-relaxed text-muted-foreground">
-                Connect your AI tools to this compliance data via the{" "}
+                Connect URL-based remote MCP clients directly to the{" "}
                 <a
-                  href="https://azure-compliance.bitesinbyte.com/.well-known/mcp.json"
+                  href={MCP_ENDPOINT_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-medium text-foreground underline decoration-muted-foreground/30 underline-offset-2 transition-colors hover:decoration-foreground"
                 >
-                  MCP discovery endpoint
+                  MCP endpoint
                 </a>
-                . Add the config below to Claude Desktop, Cursor, or any
-                MCP-compatible client.
+                . The{" "}
+                <a
+                  href={MCP_SERVER_CARD_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline decoration-muted-foreground/30 underline-offset-2 transition-colors hover:decoration-foreground"
+                >
+                  Server Card
+                </a>{" "}
+                and{" "}
+                <a
+                  href={MCP_CATALOG_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline decoration-muted-foreground/30 underline-offset-2 transition-colors hover:decoration-foreground"
+                >
+                  Catalog
+                </a>{" "}
+                are experimental discovery metadata, not connection URLs.
               </p>
               <div className="mt-2.5 rounded-md border bg-muted/50 p-2.5">
                 <pre className="overflow-x-auto text-[11px] leading-relaxed">
-                  <code>{`{
-  "mcpServers": {
-    "azure-compliance": {
-      "url": "https://azure-compliance.bitesinbyte.com/.well-known/mcp.json"
-    }
-  }
-}`}</code>
+                  <code>{MCP_CLIENT_CONFIG_EXAMPLE}</code>
                 </pre>
               </div>
               <p className="mt-2 text-[11px] text-muted-foreground">
-                Then ask your AI assistant questions like{" "}
+                Supports {MCP_PRIMARY_PROTOCOL.displayLabel}, with{" "}
+                {MCP_COMPATIBILITY_PROTOCOL.displayLabel} compatibility. After
+                connecting, ask questions like{" "}
                 <span className="italic">
                   &ldquo;Which Azure services are HIPAA compliant?&rdquo;
                 </span>{" "}

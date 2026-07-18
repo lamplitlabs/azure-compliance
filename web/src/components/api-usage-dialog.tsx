@@ -11,10 +11,17 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { DATA_URL } from "@/lib/constants";
-
-const SITE_URL = "https://azure-compliance.bitesinbyte.com";
-const JSON_URL = `${SITE_URL}/data/azure-compliance.json`;
+import {
+  DATA_API_URL,
+  MCP_CATALOG_URL,
+  MCP_CLIENT_CONFIG_EXAMPLE,
+  MCP_COMPATIBILITY_PROTOCOL,
+  MCP_COMPATIBILITY_SERVER_CARD_URL,
+  MCP_ENDPOINT_URL,
+  MCP_PRIMARY_PROTOCOL,
+  MCP_SERVER_CARD_URL,
+  SITE_URL,
+} from "@/lib/constants";
 
 interface CodeBlockProps {
   code: string;
@@ -66,8 +73,8 @@ export function ApiUsageDialog() {
         <DialogHeader>
           <DialogTitle>API, MCP &amp; Query Usage</DialogTitle>
           <DialogDescription>
-            Use the JSON endpoint, MCP integration, or URL query parameters to
-            integrate compliance data into your workflows.
+            Use the JSON endpoint, remote MCP server, or URL query parameters
+            to integrate compliance data into your workflows.
           </DialogDescription>
         </DialogHeader>
 
@@ -78,13 +85,13 @@ export function ApiUsageDialog() {
             <p className="mb-2 text-xs text-muted-foreground">
               Fetch the full compliance dataset as JSON. Updated weekly.
             </p>
-            <CodeBlock code={JSON_URL} />
+            <CodeBlock code={DATA_API_URL} />
           </section>
 
           {/* Fetch examples */}
           <section>
             <h3 className="mb-2 text-sm font-semibold">Fetch with cURL</h3>
-            <CodeBlock code={`curl -s ${JSON_URL} | jq '.services | length'`} />
+            <CodeBlock code={`curl -s ${DATA_API_URL} | jq '.services | length'`} />
           </section>
 
           <section>
@@ -94,7 +101,7 @@ export function ApiUsageDialog() {
             <CodeBlock
               language="javascript"
               code={`const res = await fetch(
-  "${JSON_URL}"
+  "${DATA_API_URL}"
 );
 const data = await res.json();
 
@@ -113,7 +120,7 @@ console.log(hipaaServices.map((s) => s.serviceName));`}
               code={`import requests
 
 data = requests.get(
-    "${JSON_URL}"
+    "${DATA_API_URL}"
 ).json()
 
 # Services with SOC 1,2,3 on Azure Government
@@ -209,48 +216,63 @@ print(soc_gov)`}
           <section>
             <h3 className="mb-2 text-sm font-semibold">MCP (Model Context Protocol)</h3>
             <p className="mb-2 text-xs text-muted-foreground">
-              This site exposes an MCP discovery endpoint at{" "}
-              <code className="rounded bg-muted px-1 font-mono text-[11px]">
-                /.well-known/mcp.json
-              </code>
-              . AI tools and agents that support MCP can discover and query the
-              compliance data automatically.
+              Connect URL-based remote MCP clients directly to the MCP endpoint.
+              The Server Card and Catalog are separate experimental discovery
+              metadata, not MCP transports.
             </p>
             <div className="space-y-3">
               <div>
-                <p className="mb-1 text-xs font-medium">Discovery URL</p>
-                <CodeBlock code={`${SITE_URL}/.well-known/mcp.json`} />
+                <p className="mb-1 text-xs font-medium">MCP endpoint (connection URL)</p>
+                <CodeBlock code={MCP_ENDPOINT_URL} />
               </div>
               <div>
-                <p className="mb-1 text-xs font-medium">Claude Desktop / Cursor</p>
+                <p className="mb-1 text-xs font-medium">Remote client config</p>
                 <p className="mb-1 text-xs text-muted-foreground">
-                  Add to your MCP config (e.g.{" "}
-                  <code className="rounded bg-muted px-1 font-mono text-[11px]">
-                    claude_desktop_config.json
-                  </code>{" "}
-                  or{" "}
-                  <code className="rounded bg-muted px-1 font-mono text-[11px]">
-                    .cursor/mcp.json
-                  </code>
-                  ):
+                  Add the endpoint through your client&apos;s remote server UI or
+                  equivalent URL-based configuration:
                 </p>
                 <CodeBlock
                   language="json"
-                  code={`{
-  "mcpServers": {
-    "azure-compliance": {
-      "url": "${SITE_URL}/.well-known/mcp.json"
-    }
-  }
-}`}
+                  code={MCP_CLIENT_CONFIG_EXAMPLE}
                 />
               </div>
               <div>
-                <p className="mb-1 text-xs font-medium">What it provides</p>
+                <p className="mb-1 text-xs font-medium">Experimental discovery metadata</p>
+                <p className="mb-1 text-xs text-muted-foreground">
+                  Discovery-aware clients may read these documents before
+                  connecting. Other clients can use the endpoint above directly.
+                </p>
+                <div className="space-y-1.5">
+                  <div>
+                    <p className="mb-1 text-xs font-medium">Catalog</p>
+                    <CodeBlock code={MCP_CATALOG_URL} />
+                  </div>
+                  <div>
+                    <p className="mb-1 text-xs font-medium">Runtime Server Card</p>
+                    <CodeBlock code={MCP_SERVER_CARD_URL} />
+                  </div>
+                  <div>
+                    <p className="mb-1 text-xs font-medium">Compatibility Server Card</p>
+                    <CodeBlock code={MCP_COMPATIBILITY_SERVER_CARD_URL} />
+                  </div>
+                </div>
+              </div>
+              <div>
+                <p className="mb-1 text-xs font-medium">Protocol support</p>
+                <p className="text-xs text-muted-foreground">
+                  The remote&apos;s primary protocol is{" "}
+                  {MCP_PRIMARY_PROTOCOL.displayLabel};{" "}
+                  {MCP_COMPATIBILITY_PROTOCOL.displayLabel} remains supported
+                  for compatibility. Server Card and Catalog discovery remain
+                  experimental.
+                </p>
+              </div>
+              <div>
+                <p className="mb-1 text-xs font-medium">Data scope</p>
                 <ul className="space-y-1 text-xs text-muted-foreground">
                   <li className="flex items-start gap-1.5">
                     <span className="mt-1 block h-1 w-1 shrink-0 rounded-full bg-muted-foreground/50" />
-                    Full compliance dataset as a JSON resource (210+ services)
+                    Compliance coverage for 200+ Azure services
                   </li>
                   <li className="flex items-start gap-1.5">
                     <span className="mt-1 block h-1 w-1 shrink-0 rounded-full bg-muted-foreground/50" />

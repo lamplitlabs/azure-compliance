@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { SITE_URL } from "@/lib/constants";
 import "./globals.css";
 
 const inter = Inter({
@@ -10,14 +11,13 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const siteUrl = "https://azure-compliance.bitesinbyte.com";
 const siteName = "Azure Compliance Matrix";
 const siteTitle = "Azure Services Compliance Matrix | Bites In Byte";
 const siteDescription =
-  "Interactive compliance coverage matrix for 210+ Azure services. Search, filter, and explore compliance certifications across 17 frameworks including ISO 27001, SOC 2, HIPAA, PCI DSS, HITRUST, and CSA STAR for Azure and Azure Government.";
+  "Interactive compliance coverage matrix for 200+ Azure services. Search, filter, and explore compliance certifications across 17 frameworks including ISO 27001, SOC 2, HIPAA, PCI DSS, HITRUST, and CSA STAR for Azure and Azure Government.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: siteTitle,
     template: "%s | Azure Compliance Matrix",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     title: siteTitle,
     description: siteDescription,
     type: "website",
-    url: siteUrl,
+    url: SITE_URL,
     siteName,
     locale: "en_US",
   },
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     description: siteDescription,
   },
   alternates: {
-    canonical: siteUrl,
+    canonical: SITE_URL,
   },
   robots: {
     index: true,
@@ -82,7 +82,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   name: siteName,
-  url: siteUrl,
+  url: SITE_URL,
   description: siteDescription,
   applicationCategory: "BusinessApplication",
   operatingSystem: "Any",

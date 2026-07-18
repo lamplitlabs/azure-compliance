@@ -1,0 +1,171 @@
+name: Deploy MCP Server
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "mcp-server/**"
+      - ".github/workflows/deploy-mcp.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+  id-token: write
+
+concurrency:
+  group: mcp-production
+  cancel-in-progress: false
+
+env:
+  AZURE_CONTAINER_APP: azure-compliance-mcp
+  AZURE_RESOURCE_GROUP: amistio
+  IMAGE: ghcr.io/bitesinbyte/azure-compliance-mcp:${{ github.sha }}
+  MCP_PUBLIC_URL: https://azure-compliance-mcp.purplefield-872ca910.germanywestcentral.azurecontainerapps.io/mcp
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: "22"
+          cache: "npm"
+          cache-dependency-path: mcp-server/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+        working-directory: mcp-server
+
+      - name: Test
+        run: npm test
+        working-directory: mcp-server
+
+      - name: Build
+        run: npm run build
+        working-directory: mcp-server
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@c94ce9fb468520275223c153574b00df6fe4bcc9 # v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Docker Buildx
+        uses: docker/setup-buildx-action@8d2750c68a42422c14e847fe6c8ac0403b4cbd6f # v3
+
+      - name: Build and push image
+        uses: docker/build-push-action@10e90e3645eae34f1e60eeb005ba3a3d33f178e8 # v6
+        with:
+          context: mcp-server
+          file: mcp-server/Dockerfile
+          platforms: linux/amd64
+          push: true
+          tags: |
+            ${{ env.IMAGE }}
+            ghcr.io/bitesinbyte/azure-compliance-mcp:latest
+          labels: |
+            org.opencontainers.image.source=${{ github.server_url }}/${{ github.repository }}
+            org.opencontainers.image.revision=${{ github.sha }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Verify anonymous image pull
+        run: |
+          docker logout ghcr.io
+          docker pull --platform linux/amd64 "$IMAGE"
+
+      - name: Login to Azure
+        uses: azure/login@a457da9ea143d694b1b9c7c869ebb04ebe844ef5 # v2
+        with:
+          client-id: ${{ vars.AZURE_CLIENT_ID }}
+          tenant-id: ${{ vars.AZURE_TENANT_ID }}
+          subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Capture current image
+        id: current
+        run: |
+          image="$(
+            az containerapp show \
+              --name "$AZURE_CONTAINER_APP" \
+              --resource-group "$AZURE_RESOURCE_GROUP" \
+              --query "properties.template.containers[0].image" \
+              --output tsv
+          )"
+          echo "image=$image" >> "$GITHUB_OUTPUT"
+
+          target_port="$(
+            az containerapp show \
+              --name "$AZURE_CONTAINER_APP" \
+              --resource-group "$AZURE_RESOURCE_GROUP" \
+              --query "properties.configuration.ingress.targetPort" \
+              --output tsv
+          )"
+          echo "target_port=$target_port" >> "$GITHUB_OUTPUT"
+
+      - name: Deploy container revision
+        id: deploy
+        run: |
+          az containerapp ingress update \
+            --name "$AZURE_CONTAINER_APP" \
+            --resource-group "$AZURE_RESOURCE_GROUP" \
+            --target-port 8080 \
+            --transport auto \
+            --only-show-errors
+
+          az containerapp update \
+            --name "$AZURE_CONTAINER_APP" \
+            --resource-group "$AZURE_RESOURCE_GROUP" \
+            --image "$IMAGE" \
+            --set-env-vars \
+              "MCP_PUBLIC_URL=$MCP_PUBLIC_URL" \
+              "DATA_URL=https://azure-compliance.bitesinbyte.com/data/azure-compliance.json" \
+              "ALLOWED_ORIGINS=https://azure-compliance.bitesinbyte.com" \
+              "NODE_ENV=production" \
+            --only-show-errors
+
+      - name: Verify health
+        run: |
+          for attempt in {1..20}; do
+            if curl \
+              --fail \
+              --silent \
+              --show-error \
+              --connect-timeout 5 \
+              --max-time 10 \
+              "${MCP_PUBLIC_URL%/mcp}/healthz" &&
+              curl \
+                --fail \
+                --silent \
+                --show-error \
+                --connect-timeout 5 \
+                --max-time 10 \
+                --header "Accept: application/mcp-server-card+json" \
+                "${MCP_PUBLIC_URL}/server-card" >/dev/null; then
+              npm --prefix mcp-server run smoke -- "$MCP_PUBLIC_URL"
+              exit $?
+            fi
+            sleep 6
+          done
+          exit 1
+
+      - name: Roll back failed deployment
+        if: ${{ failure() && steps.deploy.outcome == 'success' }}
+        run: |
+          az containerapp ingress update \
+            --name "$AZURE_CONTAINER_APP" \
+            --resource-group "$AZURE_RESOURCE_GROUP" \
+            --target-port "${{ steps.current.outputs.target_port }}" \
+            --transport auto \
+            --only-show-errors
+
+          az containerapp update \
+            --name "$AZURE_CONTAINER_APP" \
+            --resource-group "$AZURE_RESOURCE_GROUP" \
+            --image "${{ steps.current.outputs.image }}" \
+            --only-show-errors
