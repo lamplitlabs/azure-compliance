@@ -8,12 +8,12 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/bitesinbyte/azure-compliance/internal/gist"
-	"github.com/bitesinbyte/azure-compliance/internal/normalizer"
-	"github.com/bitesinbyte/azure-compliance/internal/parser"
-	"github.com/bitesinbyte/azure-compliance/internal/report"
-	"github.com/bitesinbyte/azure-compliance/internal/state"
-	"github.com/bitesinbyte/azure-compliance/internal/stp"
+	"github.com/lamplitlabs/azure-compliance/internal/gist"
+	"github.com/lamplitlabs/azure-compliance/internal/normalizer"
+	"github.com/lamplitlabs/azure-compliance/internal/parser"
+	"github.com/lamplitlabs/azure-compliance/internal/report"
+	"github.com/lamplitlabs/azure-compliance/internal/state"
+	"github.com/lamplitlabs/azure-compliance/internal/stp"
 )
 
 const (

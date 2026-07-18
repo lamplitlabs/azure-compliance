@@ -1,13 +1,13 @@
 <p align="center">
-  <a href="https://github.com/bitesinbyte/azure-compliance">
-    <img src="https://github.com/bitesinbyte/azure-compliance/raw/main/.github/images/logo.svg" width="256px" />
+  <a href="https://github.com/lamplitlabs/azure-compliance">
+    <img src="https://github.com/lamplitlabs/azure-compliance/raw/main/.github/images/logo.svg" width="256px" />
   </a>
 </p>
-<h1 align="center">Azure Compliance | Bites In Byte</h1>
+<h1 align="center">Azure Compliance | Lamplit Labs</h1>
 
 Auto-synced compliance coverage matrix for Azure services, sourced from Microsoft's [Service Trust Portal](https://servicetrust.microsoft.com). Search, filter, and explore compliance certifications across 17 frameworks for Azure and Azure Government.
 
-**Live site:** [azure-compliance.bitesinbyte.com](https://azure-compliance.bitesinbyte.com)
+**Live site:** [azure-compliance.lamplitlabs.com](https://azure-compliance.lamplitlabs.com)
 
 ## How it works
 
@@ -49,8 +49,8 @@ This data reflects Microsoft's platform-level compliance attestation scope as pu
 
 ## Need Help?
 
-If you need any help or if you find any issue, please raise it [here](https://github.com/bitesinbyte/azure-compliance/discussions).
+If you need any help or if you find any issue, please raise it [here](https://github.com/lamplitlabs/azure-compliance/discussions).
 
 ## License
 
-Licensed under the [MIT license](https://github.com/bitesinbyte/azure-compliance/blob/main/LICENSE).
+Licensed under the [MIT license](https://github.com/lamplitlabs/azure-compliance/blob/main/LICENSE).

@@ -3,17 +3,17 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Menu } from "lucide-react";
-import { BitesinByteLogo } from "@/components/bitesinbyte-logo";
+import { LamplitLabsLogo } from "@/components/lamplit-labs-logo";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetTrigger, SheetContent, SheetTitle } from "@/components/ui/sheet";
 
 const NAV_LINKS = [
   { label: "Compliance Matrix", href: "/", external: false, active: true },
-  { label: "Products", href: "https://www.bitesinbyte.com/#products", external: true },
-  { label: "About", href: "https://www.bitesinbyte.com/#about", external: true },
-  { label: "Blog", href: "https://blogs.bitesinbyte.com", external: true },
-  { label: "Contact", href: "https://www.bitesinbyte.com/#contact", external: true },
+  { label: "Products", href: "https://www.lamplitlabs.com/#products", external: true },
+  { label: "About", href: "https://www.lamplitlabs.com/#about", external: true },
+  { label: "Blog", href: "https://blogs.lamplitlabs.com", external: true },
+  { label: "Contact", href: "https://www.lamplitlabs.com/#contact", external: true },
 ];
 
 export function Header() {
@@ -24,14 +24,14 @@ export function Header() {
       <div className="mx-auto flex h-14 max-w-7xl items-center justify-between px-4">
         {/* Logo */}
         <Link
-          href="https://www.bitesinbyte.com"
+          href="https://www.lamplitlabs.com"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 transition-opacity hover:opacity-80"
         >
-          <BitesinByteLogo className="h-7 w-7" />
+          <LamplitLabsLogo className="h-7 w-7" />
           <span className="text-lg font-semibold tracking-tight">
-            Bites In Byte
+            Lamplit Labs
           </span>
         </Link>
 

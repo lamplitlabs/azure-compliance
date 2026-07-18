@@ -1,23 +1,23 @@
 import Link from "next/link";
-import { BitesinByteLogo } from "@/components/bitesinbyte-logo";
+import { LamplitLabsLogo } from "@/components/lamplit-labs-logo";
 import { Separator } from "@/components/ui/separator";
 
 const PRODUCTS = [
   { label: "Kenntnistrainer", href: "https://www.kenntnistrainer.de" },
   { label: "Fachsprachtrainer", href: "https://www.fachsprachtrainer.de" },
   { label: "Leben in Deutschland", href: "https://www.lebenindeutschland.org" },
-  { label: "Developer Tools", href: "https://tools.bitesinbyte.com" },
-  { label: "Resume Builder", href: "https://resume.bitesinbyte.com" },
-  { label: "EDMX Tools", href: "https://edmx.bitesinbyte.com" },
-  { label: "Azure Draw.io Assets", href: "https://azure-assets.bitesinbyte.com" },
-  { label: "Azure Compliance Matrix", href: "https://azure-compliance.bitesinbyte.com" },
+  { label: "Developer Tools", href: "https://tools.lamplitlabs.com" },
+  { label: "Resume Builder", href: "https://resume.lamplitlabs.com" },
+  { label: "EDMX Tools", href: "https://edmx.lamplitlabs.com" },
+  { label: "Azure Draw.io Assets", href: "https://azure-assets.lamplitlabs.com" },
+  { label: "Azure Compliance Matrix", href: "https://azure-compliance.lamplitlabs.com" },
 ];
 
 const NAVIGATION = [
-  { label: "Products", href: "https://www.bitesinbyte.com/#products" },
-  { label: "About", href: "https://www.bitesinbyte.com/#about" },
-  { label: "Blog", href: "https://blogs.bitesinbyte.com" },
-  { label: "Contact", href: "https://www.bitesinbyte.com/#contact" },
+  { label: "Products", href: "https://www.lamplitlabs.com/#products" },
+  { label: "About", href: "https://www.lamplitlabs.com/#about" },
+  { label: "Blog", href: "https://blogs.lamplitlabs.com" },
+  { label: "Contact", href: "https://www.lamplitlabs.com/#contact" },
 ];
 
 export function Footer() {
@@ -28,18 +28,18 @@ export function Footer() {
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
             <Link
-              href="https://www.bitesinbyte.com"
+              href="https://www.lamplitlabs.com"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2"
             >
-              <BitesinByteLogo className="h-6 w-6" />
+              <LamplitLabsLogo className="h-6 w-6" />
               <span className="text-base font-semibold tracking-tight">
-                Bites In Byte
+                Lamplit Labs
               </span>
             </Link>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-              Small, practical software packed into every byte.
+              Small, practical software that illuminates the path forward.
             </p>
           </div>
 
@@ -86,7 +86,7 @@ export function Footer() {
             <h4 className="mb-3 text-sm font-semibold">Connect</h4>
             <div className="flex flex-wrap gap-2">
               <Link
-                href="https://github.com/bitesinbyte"
+                href="https://github.com/lamplitlabs"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex h-9 w-9 items-center justify-center rounded-lg border text-muted-foreground transition-colors hover:border-muted-foreground hover:text-foreground"
@@ -97,7 +97,7 @@ export function Footer() {
                 </svg>
               </Link>
               <Link
-                href="https://www.linkedin.com/company/bitesinbyte"
+                href="https://www.linkedin.com/company/lamplitlabs"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex h-9 w-9 items-center justify-center rounded-lg border text-muted-foreground transition-colors hover:border-muted-foreground hover:text-foreground"
@@ -108,7 +108,7 @@ export function Footer() {
                 </svg>
               </Link>
               <Link
-                href="https://www.instagram.com/bitesinbyte"
+                href="https://www.instagram.com/lamplitlabs"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex h-9 w-9 items-center justify-center rounded-lg border text-muted-foreground transition-colors hover:border-muted-foreground hover:text-foreground"
@@ -125,7 +125,7 @@ export function Footer() {
         <Separator className="my-8" />
 
         <p className="text-center text-sm text-muted-foreground">
-          &copy; {new Date().getFullYear()} Bites In Byte. All rights reserved.
+          &copy; {new Date().getFullYear()} Lamplit Labs. All rights reserved.
         </p>
       </div>
     </footer>

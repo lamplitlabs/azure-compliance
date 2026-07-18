@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/dialog";
 import { DATA_URL } from "@/lib/constants";
 
-const SITE_URL = "https://azure-compliance.bitesinbyte.com";
+const SITE_URL = "https://azure-compliance.lamplitlabs.com";
 const JSON_URL = `${SITE_URL}/data/azure-compliance.json`;
 
 interface CodeBlockProps {

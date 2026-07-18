@@ -1,4 +1,4 @@
-module github.com/bitesinbyte/azure-compliance
+module github.com/lamplitlabs/azure-compliance
 
 go 1.24.1
 
