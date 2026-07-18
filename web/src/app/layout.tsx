@@ -95,6 +95,7 @@ const jsonLd = {
     "@type": "Organization",
     name: "Lamplit Labs",
     url: "https://www.lamplitlabs.com",
+    sameAs: ["https://x.com/lamplitlabs"],
   },
   about: {
     "@type": "Thing",
