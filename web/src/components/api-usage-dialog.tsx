@@ -11,17 +11,10 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import {
-  DATA_API_URL,
-  MCP_CATALOG_URL,
-  MCP_CLIENT_CONFIG_EXAMPLE,
-  MCP_COMPATIBILITY_PROTOCOL,
-  MCP_COMPATIBILITY_SERVER_CARD_URL,
-  MCP_ENDPOINT_URL,
-  MCP_PRIMARY_PROTOCOL,
-  MCP_SERVER_CARD_URL,
-  SITE_URL,
-} from "@/lib/constants";
+import { DATA_URL } from "@/lib/constants";
+
+const SITE_URL = "https://azure-compliance.bitesinbyte.com";
+const JSON_URL = `${SITE_URL}/data/azure-compliance.json`;
 
 interface CodeBlockProps {
   code: string;
@@ -71,10 +64,10 @@ export function ApiUsageDialog() {
       </DialogTrigger>
       <DialogContent className="sm:max-w-2xl max-h-[85vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle>API, MCP &amp; Query Usage</DialogTitle>
+          <DialogTitle>API &amp; Query Usage</DialogTitle>
           <DialogDescription>
-            Use the JSON endpoint, remote MCP server, or URL query parameters
-            to integrate compliance data into your workflows.
+            Use the JSON endpoint or URL query parameters to integrate
+            compliance data into your workflows.
           </DialogDescription>
         </DialogHeader>
 
@@ -85,13 +78,13 @@ export function ApiUsageDialog() {
             <p className="mb-2 text-xs text-muted-foreground">
               Fetch the full compliance dataset as JSON. Updated weekly.
             </p>
-            <CodeBlock code={DATA_API_URL} />
+            <CodeBlock code={JSON_URL} />
           </section>
 
           {/* Fetch examples */}
           <section>
             <h3 className="mb-2 text-sm font-semibold">Fetch with cURL</h3>
-            <CodeBlock code={`curl -s ${DATA_API_URL} | jq '.services | length'`} />
+            <CodeBlock code={`curl -s ${JSON_URL} | jq '.services | length'`} />
           </section>
 
           <section>
@@ -101,7 +94,7 @@ export function ApiUsageDialog() {
             <CodeBlock
               language="javascript"
               code={`const res = await fetch(
-  "${DATA_API_URL}"
+  "${JSON_URL}"
 );
 const data = await res.json();
 
@@ -120,7 +113,7 @@ console.log(hipaaServices.map((s) => s.serviceName));`}
               code={`import requests
 
 data = requests.get(
-    "${DATA_API_URL}"
+    "${JSON_URL}"
 ).json()
 
 # Services with SOC 1,2,3 on Azure Government
@@ -209,95 +202,6 @@ print(soc_gov)`}
                   </tr>
                 </tbody>
               </table>
-            </div>
-          </section>
-
-          {/* MCP Integration */}
-          <section>
-            <h3 className="mb-2 text-sm font-semibold">MCP (Model Context Protocol)</h3>
-            <p className="mb-2 text-xs text-muted-foreground">
-              Connect URL-based remote MCP clients directly to the MCP endpoint.
-              The Server Card and Catalog are separate experimental discovery
-              metadata, not MCP transports.
-            </p>
-            <div className="space-y-3">
-              <div>
-                <p className="mb-1 text-xs font-medium">MCP endpoint (connection URL)</p>
-                <CodeBlock code={MCP_ENDPOINT_URL} />
-              </div>
-              <div>
-                <p className="mb-1 text-xs font-medium">Remote client config</p>
-                <p className="mb-1 text-xs text-muted-foreground">
-                  Add the endpoint through your client&apos;s remote server UI or
-                  equivalent URL-based configuration:
-                </p>
-                <CodeBlock
-                  language="json"
-                  code={MCP_CLIENT_CONFIG_EXAMPLE}
-                />
-              </div>
-              <div>
-                <p className="mb-1 text-xs font-medium">Experimental discovery metadata</p>
-                <p className="mb-1 text-xs text-muted-foreground">
-                  Discovery-aware clients may read these documents before
-                  connecting. Other clients can use the endpoint above directly.
-                </p>
-                <div className="space-y-1.5">
-                  <div>
-                    <p className="mb-1 text-xs font-medium">Catalog</p>
-                    <CodeBlock code={MCP_CATALOG_URL} />
-                  </div>
-                  <div>
-                    <p className="mb-1 text-xs font-medium">Runtime Server Card</p>
-                    <CodeBlock code={MCP_SERVER_CARD_URL} />
-                  </div>
-                  <div>
-                    <p className="mb-1 text-xs font-medium">Compatibility Server Card</p>
-                    <CodeBlock code={MCP_COMPATIBILITY_SERVER_CARD_URL} />
-                  </div>
-                </div>
-              </div>
-              <div>
-                <p className="mb-1 text-xs font-medium">Protocol support</p>
-                <p className="text-xs text-muted-foreground">
-                  The remote&apos;s primary protocol is{" "}
-                  {MCP_PRIMARY_PROTOCOL.displayLabel};{" "}
-                  {MCP_COMPATIBILITY_PROTOCOL.displayLabel} remains supported
-                  for compatibility. Server Card and Catalog discovery remain
-                  experimental.
-                </p>
-              </div>
-              <div>
-                <p className="mb-1 text-xs font-medium">Data scope</p>
-                <ul className="space-y-1 text-xs text-muted-foreground">
-                  <li className="flex items-start gap-1.5">
-                    <span className="mt-1 block h-1 w-1 shrink-0 rounded-full bg-muted-foreground/50" />
-                    Compliance coverage for 200+ Azure services
-                  </li>
-                  <li className="flex items-start gap-1.5">
-                    <span className="mt-1 block h-1 w-1 shrink-0 rounded-full bg-muted-foreground/50" />
-                    17 compliance frameworks across Azure and Azure Government
-                  </li>
-                  <li className="flex items-start gap-1.5">
-                    <span className="mt-1 block h-1 w-1 shrink-0 rounded-full bg-muted-foreground/50" />
-                    Auto-synced weekly from Microsoft Service Trust Portal
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <p className="mb-1 text-xs font-medium">Example prompts</p>
-                <div className="space-y-1.5">
-                  <div className="rounded-md border bg-muted/30 px-3 py-2 text-xs text-muted-foreground italic">
-                    &ldquo;Which Azure services are HIPAA compliant?&rdquo;
-                  </div>
-                  <div className="rounded-md border bg-muted/30 px-3 py-2 text-xs text-muted-foreground italic">
-                    &ldquo;List services with PCI DSS on Azure Government.&rdquo;
-                  </div>
-                  <div className="rounded-md border bg-muted/30 px-3 py-2 text-xs text-muted-foreground italic">
-                    &ldquo;Compare ISO 27001 coverage between Azure and Azure Gov for storage services.&rdquo;
-                  </div>
-                </div>
-              </div>
             </div>
           </section>
 

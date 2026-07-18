@@ -1,5 +1,4 @@
 import { type FrameworkKey } from "@/types/compliance";
-import mcpMetadata from "./mcp-metadata.json";
 
 export const FRAMEWORK_KEYS: FrameworkKey[] = [
   "csaStarCertification",
@@ -61,34 +60,4 @@ export const FRAMEWORK_FULL_NAMES: Record<FrameworkKey, string> = {
   spainEnsHigh: "Spain ENS High",
 };
 
-export const SITE_URL = mcpMetadata.siteUrl;
-export const REPOSITORY_URL = mcpMetadata.repository.url;
 export const DATA_URL = "./data/azure-compliance.json";
-export const DATA_API_URL = `${SITE_URL}/data/azure-compliance.json`;
-
-export const MCP_SERVER_NAME = mcpMetadata.serverName;
-export const MCP_SERVER_TITLE = mcpMetadata.serverTitle;
-export const MCP_SERVER_VERSION = mcpMetadata.serverVersion;
-export const MCP_ENDPOINT_URL = mcpMetadata.remote.url;
-export const MCP_SERVER_CARD_URL = mcpMetadata.serverCardUrl;
-export const MCP_COMPATIBILITY_SERVER_CARD_URL =
-  mcpMetadata.compatibilityServerCardUrl;
-export const MCP_CATALOG_URL = mcpMetadata.catalogUrl;
-export const MCP_PRIMARY_PROTOCOL = mcpMetadata.protocolVersions.primary;
-export const MCP_COMPATIBILITY_PROTOCOL =
-  mcpMetadata.protocolVersions.compatibility;
-export const MCP_SUPPORTED_PROTOCOL_VERSIONS = [
-  MCP_PRIMARY_PROTOCOL.version,
-  MCP_COMPATIBILITY_PROTOCOL.version,
-];
-export const MCP_CLIENT_CONFIG_EXAMPLE = JSON.stringify(
-  {
-    mcpServers: {
-      "azure-compliance": {
-        url: MCP_ENDPOINT_URL,
-      },
-    },
-  },
-  null,
-  2
-);

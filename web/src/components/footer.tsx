@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { BitesinByteLogo } from "@/components/bitesinbyte-logo";
 import { Separator } from "@/components/ui/separator";
-import { SITE_URL } from "@/lib/constants";
 
 const PRODUCTS = [
   { label: "Kenntnistrainer", href: "https://www.kenntnistrainer.de" },
@@ -11,7 +10,7 @@ const PRODUCTS = [
   { label: "Resume Builder", href: "https://resume.bitesinbyte.com" },
   { label: "EDMX Tools", href: "https://edmx.bitesinbyte.com" },
   { label: "Azure Draw.io Assets", href: "https://azure-assets.bitesinbyte.com" },
-  { label: "Azure Compliance Matrix", href: SITE_URL },
+  { label: "Azure Compliance Matrix", href: "https://azure-compliance.bitesinbyte.com" },
 ];
 
 const NAVIGATION = [

@@ -16,29 +16,8 @@ Auto-synced compliance coverage matrix for Azure services, sourced from Microsof
 3. Azure OpenAI parses the compliance matrix into structured JSON
 4. The JSON is committed to `data/azure-compliance.json` and the GitHub Gist is updated for backward compatibility
 5. GitHub Pages serves an interactive, searchable compliance table from `web/`
-6. Azure Container Apps serves the read-only remote MCP endpoint from `mcp-server/`
 
-Data is checked **weekly** via GitHub Actions. If the source document has changed, the data is re-synced. You can also trigger a manual sync.
-
-## MCP server
-
-Connect remote MCP clients directly to:
-
-```text
-https://azure-compliance-mcp.purplefield-872ca910.germanywestcentral.azurecontainerapps.io/mcp
-```
-
-The server exposes read-only compliance tools and resources, supports the MCP `2026-07-28`
-release candidate with `2025-11-25` compatibility, and uses the official TypeScript SDK.
-Experimental discovery metadata is available through the runtime Server Card and website
-Catalog; `/.well-known/mcp.json` remains as a compatibility Server Card.
-
-```bash
-cd mcp-server
-npm ci
-npm test
-npm run build
-```
+Data is checked on the **1st of every month** via GitHub Actions. If the source document has changed, the data is re-synced. You can also trigger a manual sync.
 
 ## Frameworks
 

@@ -39,10 +39,6 @@ jobs:
         run: npm ci
         working-directory: web
 
-      - name: Validate MCP metadata
-        run: npm run validate:mcp
-        working-directory: web
-
       - name: Copy compliance data
         run: |
           mkdir -p web/public/data

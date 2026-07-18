@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { Search, Check, Minus, Share2, Cpu } from "lucide-react";
+import { Search, Check, Minus, Share2 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -33,12 +33,6 @@ import {
   FRAMEWORK_KEYS,
   FRAMEWORK_LABELS,
   FRAMEWORK_FULL_NAMES,
-  MCP_CATALOG_URL,
-  MCP_CLIENT_CONFIG_EXAMPLE,
-  MCP_COMPATIBILITY_PROTOCOL,
-  MCP_ENDPOINT_URL,
-  MCP_PRIMARY_PROTOCOL,
-  MCP_SERVER_CARD_URL,
 } from "@/lib/constants";
 
 function formatDateTime(dateStr: string | undefined): string {
@@ -482,67 +476,6 @@ export function ComplianceMatrix() {
             </Table>
           </div>
         )}
-      </div>
-
-      {/* MCP Integration */}
-      <div className="mx-auto w-full max-w-7xl px-4 pb-4">
-        <div className="rounded-lg border bg-card p-4">
-          <div className="flex items-start gap-3">
-            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-muted">
-              <Cpu className="h-4 w-4 text-muted-foreground" />
-            </div>
-            <div className="min-w-0 flex-1">
-              <h3 className="text-sm font-semibold">MCP Integration</h3>
-              <p className="mt-0.5 text-xs leading-relaxed text-muted-foreground">
-                Connect URL-based remote MCP clients directly to the{" "}
-                <a
-                  href={MCP_ENDPOINT_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-medium text-foreground underline decoration-muted-foreground/30 underline-offset-2 transition-colors hover:decoration-foreground"
-                >
-                  MCP endpoint
-                </a>
-                . The{" "}
-                <a
-                  href={MCP_SERVER_CARD_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline decoration-muted-foreground/30 underline-offset-2 transition-colors hover:decoration-foreground"
-                >
-                  Server Card
-                </a>{" "}
-                and{" "}
-                <a
-                  href={MCP_CATALOG_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline decoration-muted-foreground/30 underline-offset-2 transition-colors hover:decoration-foreground"
-                >
-                  Catalog
-                </a>{" "}
-                are experimental discovery metadata, not connection URLs.
-              </p>
-              <div className="mt-2.5 rounded-md border bg-muted/50 p-2.5">
-                <pre className="overflow-x-auto text-[11px] leading-relaxed">
-                  <code>{MCP_CLIENT_CONFIG_EXAMPLE}</code>
-                </pre>
-              </div>
-              <p className="mt-2 text-[11px] text-muted-foreground">
-                Supports {MCP_PRIMARY_PROTOCOL.displayLabel}, with{" "}
-                {MCP_COMPATIBILITY_PROTOCOL.displayLabel} compatibility. After
-                connecting, ask questions like{" "}
-                <span className="italic">
-                  &ldquo;Which Azure services are HIPAA compliant?&rdquo;
-                </span>{" "}
-                or{" "}
-                <span className="italic">
-                  &ldquo;List PCI DSS services on Azure Government.&rdquo;
-                </span>
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
 
       {/* Disclaimer */}
