@@ -11,7 +11,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/bitesinbyte/azure-compliance/internal/report"
+	"github.com/lamplitlabs/azure-compliance/internal/report"
 	"github.com/ledongthuc/pdf"
 )
 

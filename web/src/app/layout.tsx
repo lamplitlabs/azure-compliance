@@ -10,9 +10,9 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const siteUrl = "https://azure-compliance.bitesinbyte.com";
+const siteUrl = "https://azure-compliance.lamplitlabs.com";
 const siteName = "Azure Compliance Matrix";
-const siteTitle = "Azure Services Compliance Matrix | Bites In Byte";
+const siteTitle = "Azure Services Compliance Matrix | Lamplit Labs";
 const siteDescription =
   "Interactive compliance coverage matrix for 210+ Azure services. Search, filter, and explore compliance certifications across 17 frameworks including ISO 27001, SOC 2, HIPAA, PCI DSS, HITRUST, and CSA STAR for Azure and Azure Government.";
 
@@ -43,9 +43,9 @@ export const metadata: Metadata = {
     "regulatory compliance",
     "compliance framework",
   ],
-  authors: [{ name: "Bites In Byte", url: "https://bitesinbyte.com" }],
-  creator: "Bites In Byte",
-  publisher: "Bites In Byte",
+  authors: [{ name: "Lamplit Labs", url: "https://www.lamplitlabs.com" }],
+  creator: "Lamplit Labs",
+  publisher: "Lamplit Labs",
   icons: {
     icon: "/icon.svg",
   },
@@ -93,8 +93,8 @@ const jsonLd = {
   },
   creator: {
     "@type": "Organization",
-    name: "Bites In Byte",
-    url: "https://bitesinbyte.com",
+    name: "Lamplit Labs",
+    url: "https://www.lamplitlabs.com",
   },
   about: {
     "@type": "Thing",
