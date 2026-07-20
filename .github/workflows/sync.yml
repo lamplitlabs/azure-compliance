@@ -6,15 +6,12 @@ on:
   workflow_dispatch:
 
 permissions:
+  actions: write
   contents: write
-  pages: write
-  id-token: write
 
 jobs:
   sync:
     runs-on: ubuntu-latest
-    outputs:
-      has-changes: ${{ steps.commit.outputs.has-changes }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -50,7 +47,8 @@ jobs:
           fi
         id: commit
 
-  deploy:
-    needs: sync
-    if: needs.sync.outputs.has-changes == 'true'
-    uses: ./.github/workflows/deploy.yml
+      - name: Trigger website deployment
+        if: steps.commit.outputs.has-changes == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy.yml --repo "$GITHUB_REPOSITORY" --ref "$GITHUB_REF_NAME"
