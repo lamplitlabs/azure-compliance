@@ -277,8 +277,7 @@ func TestGetServiceNames(t *testing.T) {
 }
 
 func TestGetServiceNamesWhitespaceOnlyName(t *testing.T) {
-	// A name of only spaces passes the name != "" check today; this pins the
-	// current behaviour so a change to it is deliberate.
+	// A name of only spaces is skipped, like an empty one.
 	fake := &fakeOpenAI{}
 	srv := fake.server(t, func(azureOpenAIRequest) (int, string) {
 		return 200, completion(t, `{"serviceNames":["  ","Azure CDN"]}`)
@@ -287,7 +286,7 @@ func TestGetServiceNamesWhitespaceOnlyName(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	if want := []string{"", "Azure CDN"}; !reflect.DeepEqual(got, want) {
+	if want := []string{"Azure CDN"}; !reflect.DeepEqual(got, want) {
 		t.Errorf("got %q, want %q", got, want)
 	}
 }
