@@ -194,7 +194,7 @@ func getServiceNames(endpoint, apiKey, deployment, pdfText string) ([]string, er
 	var unique []string
 	for _, name := range resp.ServiceNames {
 		lower := strings.ToLower(strings.TrimSpace(name))
-		if !seen[lower] && name != "" {
+		if !seen[lower] && lower != "" {
 			seen[lower] = true
 			unique = append(unique, strings.TrimSpace(name))
 		}
